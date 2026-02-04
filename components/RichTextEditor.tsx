@@ -61,6 +61,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
     ],
     content: content,
     editable: !readOnly,
+    immediatelyRender: false,
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
     },
