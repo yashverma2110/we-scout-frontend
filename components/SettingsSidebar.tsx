@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ResearchSource, WorkflowState } from '@/types';
 import { SOURCE_ICONS } from '@/constants';
-import { Settings, X, Power } from 'lucide-react';
+import { Settings, X } from 'lucide-react';
 
 interface SettingsSidebarProps {
   isOpen: boolean;
@@ -39,8 +39,8 @@ const SettingsSidebar: React.FC<SettingsSidebarProps> = ({
               <Settings className="w-5 h-5" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-slate-900 tracking-tight text-lg leading-tight">System Controls</span>
-              <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Global Configuration</span>
+              <span className="font-bold text-slate-900 tracking-tight text-lg leading-tight">Scout Configuration</span>
+              <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Research Data Sources</span>
             </div>
           </div>
           <button 
@@ -101,30 +101,29 @@ const SettingsSidebar: React.FC<SettingsSidebarProps> = ({
           </div>
 
           <div className="pt-6 border-t border-slate-100 space-y-4">
-             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Protocol Rules</p>
+             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Configuration Notes</p>
              <div className="bg-slate-50 rounded-2xl p-5 border border-slate-100 space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
                   <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
-                    Disabling a source globally will remove it from all active research phases in the current draft.
+                    Toggle sources on or off to control which platforms are used for research queries.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
                   <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
-                    Published missions are locked and cannot have their data sources reconfigured.
+                    Disabled sources are automatically removed from all draft mission research phases.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
+                  <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
+                    Published missions are locked - source configuration cannot be changed after publishing.
                   </p>
                 </div>
              </div>
           </div>
         </SidebarContent>
-
-        <SidebarFooter className="p-6 border-t border-slate-100 bg-white">
-          <div className="flex items-center gap-3 p-4 bg-indigo-50 rounded-2xl border border-indigo-100">
-             <Power className="w-4 h-4 text-indigo-600" />
-             <p className="text-[10px] font-bold text-indigo-700 uppercase tracking-tight">System Operational</p>
-          </div>
-        </SidebarFooter>
       </aside>
     </>
   );
